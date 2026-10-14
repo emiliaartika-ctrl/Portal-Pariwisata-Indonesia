@@ -1,0 +1,38 @@
+
+<%- include('../partials/header', { title }) %>
+
+<main id="main-content" class="container page-content">
+  <div class="page-heading">
+    <div>
+      <p class="eyebrow">KATALOG WISATA</p>
+      <h1>Destinasi Pariwisata</h1>
+    </div>
+    <a class="button" href="/tambah">+ Tambah Destinasi</a>
+  </div>
+
+  <div class="destination-grid">
+    <% destinations.forEach((destination, index) => { %>
+      <article class="destination-card">
+        <div class="destination-number">
+          <%= String(index + 1).padStart(2, '0') %>
+        </div>
+
+        <p class="eyebrow"><%= destination.category %></p>
+        <h2><%= destination.name %></h2>
+        <p class="location"><%= destination.region %></p>
+        <p><%= destination.description %></p>
+
+        <p class="price">
+          Harga tiket:
+          <strong>
+            <%= destination.price === 0
+              ? 'Gratis'
+              : 'Rp ' + destination.price.toLocaleString('id-ID') %>
+          </strong>
+        </p>
+      </article>
+    <% }) %>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,54 @@
+
+<%- include('../partials/header', { title }) %>
+
+<main id="main-content" class="container page-content">
+  <p class="eyebrow">FORMULIR WISATA</p>
+  <h1>Tambah Destinasi Baru</h1>
+  <p>Masukkan informasi destinasi wisata yang ingin ditambahkan.</p>
+
+  <form class="destination-form" action="/tambah" method="POST">
+    <% if (error) { %>
+      <p class="error-message" role="alert"><%= error %></p>
+    <% } %>
+
+    <div class="form-field">
+      <label for="name">Nama Destinasi</label>
+      <input id="name" type="text" name="name"
+        placeholder="Contoh: Pantai Sanur" required>
+    </div>
+
+    <div class="form-field">
+      <label for="region">Daerah</label>
+      <input id="region" type="text" name="region"
+        placeholder="Contoh: Bali" required>
+    </div>
+
+    <div class="form-field">
+      <label for="category">Kategori</label>
+      <select id="category" name="category" required>
+        <option value="">Pilih kategori</option>
+        <option value="Alam">Alam</option>
+        <option value="Pantai">Pantai</option>
+        <option value="Budaya">Budaya</option>
+        <option value="Petualangan">Petualangan</option>
+      </select>
+    </div>
+
+    <div class="form-field">
+      <label for="price">Harga Tiket (Rp)</label>
+      <input id="price" type="number" name="price"
+        min="0" step="1" placeholder="0 jika gratis" required>
+    </div>
+
+    <div class="form-field">
+      <label for="description">Deskripsi</label>
+      <textarea id="description" name="description"
+        rows="4" placeholder="Deskripsi destinasi..." required></textarea>
+    </div>
+
+    <button class="button" type="submit">Simpan Destinasi</button>
+    <a class="button button-outline" href="/katalog">Batal</a>
+  </form>
+</main>
+
+<%- include('../partials/footer') %>

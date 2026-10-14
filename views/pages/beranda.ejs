@@ -1,0 +1,38 @@
+
+<%- include('../partials/header', { title }) %>
+
+<main id="main-content">
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">PESONA NUSANTARA</p>
+      <h1><%= welcome %></h1>
+      <p class="hero-description"><%= subtitle %></p>
+      <a class="button" href="/katalog">Lihat Destinasi</a>
+      <a class="button button-outline" href="/tentang">Tentang Kami</a>
+    </div>
+  </section>
+
+  <section class="container section">
+    <p class="eyebrow">JELAJAHI INDONESIA</p>
+    <h2>Temukan Pengalaman Baru</h2>
+
+    <div class="feature-grid">
+      <article class="feature-card">
+        <h3>Wisata Alam</h3>
+        <p>Nikmati pantai, danau, dan pegunungan Indonesia.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Wisata Budaya</h3>
+        <p>Kenali sejarah dan tradisi dari berbagai daerah.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Petualangan</h3>
+        <p>Temukan pengalaman baru di berbagai destinasi.</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>
